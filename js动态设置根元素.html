@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1.屏幕尺寸适配</title>
+<style>
+
+</style>
+</head>
+<body>
+    
+</body>
+<script>
+    ;(function(win,doc){
+        var root = document.getElementsByTagName('html')[0];
+        function refreshFontSize(){
+            var width=doc.body.clientWidth||doc.documentElement.clientWidth;
+            var fontSize=width/10;
+            root.style.fontSize=fontSize+'px';
+        }
+        win.addEventListener('resize',refreshFontSize,false)
+        win.addEventListener('DOMcontentLoaded',refreshFontSize,false);
+    })(window,document)
+</script>
+</html>
